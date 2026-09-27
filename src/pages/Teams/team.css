@@ -1,0 +1,1281 @@
+/* =========================================================
+   WORKSPHERE - TEAMS
+   Clean Google-style UI
+   ========================================================= */
+
+.teams-page {
+  min-height: 100%;
+  padding: 34px;
+  box-sizing: border-box;
+  background: #f8fafc;
+  color: #172033;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.teams-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.teams-title-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.teams-title-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.teams-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  letter-spacing: -0.6px;
+}
+
+.teams-header p {
+  margin: 7px 0 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.teams-create-button {
+  min-height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 19px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 16px rgba(37, 99, 235, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.teams-create-button:hover {
+  transform: translateY(-2px);
+
+  background: #1d4ed8;
+
+  box-shadow:
+    0 10px 23px rgba(37, 99, 235, 0.24);
+}
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.teams-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 26px;
+}
+
+.team-summary-card {
+  position: relative;
+
+  min-height: 120px;
+
+  padding: 21px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.04);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.team-summary-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 3px;
+  height: 0;
+
+  background: #2563eb;
+
+  transition: height 0.3s ease;
+}
+
+.team-summary-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 12px 27px rgba(15, 23, 42, 0.08);
+}
+
+.team-summary-card:hover::before {
+  height: 100%;
+}
+
+.team-summary-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.team-summary-top svg {
+  color: #2563eb;
+}
+
+.team-summary-card strong {
+  display: block;
+
+  margin-top: 14px;
+
+  color: #172033;
+
+  font-size: 30px;
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+.team-summary-card p {
+  margin: 7px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+.summary-status-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+}
+
+.summary-status-dot.active {
+  background: #10b981;
+}
+
+.summary-status-dot.inactive {
+  background: #94a3b8;
+}
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.teams-toolbar {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 22px;
+}
+
+.teams-search {
+  width: min(520px, 100%);
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #dbe3ee;
+  border-radius: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.teams-search svg {
+  flex-shrink: 0;
+
+  margin-right: 9px;
+
+  color: #64748b;
+}
+
+.teams-search input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.teams-search:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.teams-toolbar select {
+  height: 48px;
+
+  min-width: 165px;
+
+  padding: 0 13px;
+
+  border: 1px solid #dbe3ee;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.teams-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+/* =========================================================
+   MEMBER CARD
+   ========================================================= */
+
+.team-member-card {
+  position: relative;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e8f0;
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.035);
+
+  overflow: hidden;
+
+  animation: teamCardEnter 0.45s ease both;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.team-member-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #cbdcf8;
+
+  box-shadow:
+    0 15px 30px rgba(15, 23, 42, 0.09);
+}
+
+/* =========================================================
+   MEMBER HEADER
+   ========================================================= */
+
+.member-card-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.member-profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.member-avatar {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.member-profile h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.member-profile span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #71819b;
+
+  font-size: 12px;
+}
+
+.member-menu-button {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #94a3b8;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.member-menu-button:hover {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.member-divider {
+  height: 1px;
+
+  margin: 18px 0;
+
+  background: #edf1f6;
+}
+
+/* =========================================================
+   INFO
+   ========================================================= */
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.member-info-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 0;
+
+  color: #71819b;
+
+  font-size: 12px;
+}
+
+.member-info-row svg {
+  flex-shrink: 0;
+
+  color: #94a3b8;
+}
+
+.member-info-row span {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.member-card-footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 19px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid #edf1f6;
+}
+
+.member-card-footer > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.member-card-footer > div span {
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+.member-card-footer > div strong {
+  color: #334155;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.member-status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 9px;
+
+  border: 0;
+  border-radius: 999px;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.member-status span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+.member-status.active {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.member-status.inactive {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.member-actions {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 15px;
+}
+
+.member-actions button {
+  flex: 1;
+
+  height: 34px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  border: 1px solid #d7e0ec;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #475569;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.member-actions button:hover {
+  transform: translateY(-2px);
+
+  background: #f8fafc;
+
+  border-color: #cbd5e1;
+}
+
+.member-actions .member-delete {
+  border-color: #fecaca;
+
+  color: #dc2626;
+}
+
+.member-actions .member-delete:hover {
+  background: #fff5f5;
+
+  border-color: #fca5a5;
+}
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.teams-empty {
+  grid-column: 1 / -1;
+
+  min-height: 240px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px dashed #d7e0ec;
+  border-radius: 14px;
+
+  text-align: center;
+
+  color: #94a3b8;
+}
+
+.teams-empty h3 {
+  margin: 12px 0 5px;
+
+  color: #334155;
+
+  font-size: 17px;
+}
+
+.teams-empty p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.teams-footer {
+  padding: 16px 3px 25px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+.teams-footer strong {
+  color: #64748b;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.team-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: rgba(15, 23, 42, 0.48);
+
+  backdrop-filter: blur(4px);
+
+  animation: teamOverlayIn 0.2s ease both;
+}
+
+.team-modal {
+  width: min(560px, 100%);
+
+  max-height: calc(100vh - 40px);
+
+  overflow-y: auto;
+
+  padding: 26px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  box-shadow:
+    0 25px 60px rgba(15, 23, 42, 0.2);
+
+  animation: teamModalIn 0.25s ease both;
+}
+
+.team-modal-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 23px;
+}
+
+.team-modal-header h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.team-modal-header p {
+  margin: 6px 0 0;
+
+  color: #71819b;
+
+  font-size: 13px;
+}
+
+.team-modal-close {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #64748b;
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.team-modal-close:hover {
+  background: #f1f5f9;
+  color: #172033;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.team-form-group {
+  margin-bottom: 17px;
+}
+
+.team-form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.team-form-group input,
+.team-form-group select {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dbe3ee;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #172033;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.team-form-group input:focus,
+.team-form-group select:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================================================
+   MODAL ACTIONS
+   ========================================================= */
+
+.team-modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 22px;
+  padding-top: 20px;
+
+  border-top: 1px solid #edf1f6;
+}
+
+.team-cancel-button {
+  min-height: 44px;
+
+  padding: 0 17px;
+
+  border: 1px solid #d7e0ec;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #334155;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.team-cancel-button:hover {
+  background: #f8fafc;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes teamCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes teamOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes teamModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .teams-summary {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .teams-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .teams-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .teams-search {
+    width: 100%;
+  }
+
+  .teams-toolbar select {
+    flex: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .teams-page {
+    padding: 20px;
+  }
+
+  .teams-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .teams-create-button {
+    width: 100%;
+  }
+
+  .teams-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .teams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teams-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .teams-toolbar select {
+    width: 100%;
+  }
+
+  .team-modal {
+    padding: 20px;
+  }
+
+  .team-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .team-modal-actions button {
+    width: 100%;
+  }
+}
+/* =========================================================
+   TEAMS - ACTION BUTTONS
+   EDIT = BLUE
+   DELETE = RED
+========================================================= */
+
+.member-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+
+/* =========================================================
+   COMMON BUTTON STYLE
+========================================================= */
+
+.member-actions button {
+  flex: 1;
+
+  height: 36px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px !important;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  outline: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+   FIRST BUTTON = BLUE
+========================================================= */
+
+.member-actions button:first-child {
+  background: #2563eb !important;
+
+  border: 1px solid #2563eb !important;
+
+  color: #ffffff !important;
+}
+
+
+/* Edit icon */
+
+.member-actions button:first-child svg {
+  color: #ffffff !important;
+}
+
+
+/* Edit hover */
+
+.member-actions button:first-child:hover {
+  background: #1d4ed8 !important;
+
+  border-color: #1d4ed8 !important;
+
+  color: #ffffff !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 14px rgba(37, 99, 235, 0.28);
+}
+
+
+/* Edit click */
+
+.member-actions button:first-child:active {
+  transform: translateY(0);
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+   LAST BUTTON = RED
+========================================================= */
+
+.member-actions button:last-child {
+  background: #dc2626 !important;
+
+  border: 1px solid #dc2626 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* Delete icon */
+
+.member-actions button:last-child svg {
+  color: #ffffff !important;
+}
+
+
+/* Delete hover */
+
+.member-actions button:last-child:hover {
+  background: #b91c1c !important;
+
+  border-color: #b91c1c !important;
+
+  color: #ffffff !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 14px rgba(220, 38, 38, 0.28);
+}
+
+
+/* Delete click */
+
+.member-actions button:last-child:active {
+  transform: translateY(0);
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .member-actions button:first-child {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .member-actions button:first-child:hover {
+  background: #1d4ed8 !important;
+  border-color: #1d4ed8 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .member-actions button:last-child {
+  background: #dc2626 !important;
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .member-actions button:last-child:hover {
+  background: #b91c1c !important;
+  border-color: #b91c1c !important;
+  color: #ffffff !important;
+}
+
+/* Full-page dark palette. Target both theme roots for persisted sessions. */
+:is(html.dark-mode, body.dark-mode) .teams-page {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .teams-header h1,
+:is(html.dark-mode, body.dark-mode) .team-summary-card strong,
+:is(html.dark-mode, body.dark-mode) .member-profile h2,
+:is(html.dark-mode, body.dark-mode) .member-card-footer > div strong,
+:is(html.dark-mode, body.dark-mode) .teams-empty h3 {
+  color: #f1f5f9 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .teams-header p,
+:is(html.dark-mode, body.dark-mode) .team-summary-top,
+:is(html.dark-mode, body.dark-mode) .team-summary-card p,
+:is(html.dark-mode, body.dark-mode) .member-profile span,
+:is(html.dark-mode, body.dark-mode) .member-info-row,
+:is(html.dark-mode, body.dark-mode) .member-card-footer > div span,
+:is(html.dark-mode, body.dark-mode) .teams-empty p {
+  color: #94a3b8 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .team-summary-card,
+:is(html.dark-mode, body.dark-mode) .team-member-card,
+:is(html.dark-mode, body.dark-mode) .teams-empty,
+:is(html.dark-mode, body.dark-mode) .team-modal {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .teams-search,
+:is(html.dark-mode, body.dark-mode) .teams-toolbar select,
+:is(html.dark-mode, body.dark-mode) .team-form-group input,
+:is(html.dark-mode, body.dark-mode) .team-form-group select {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .teams-search input {
+  background: transparent !important;
+  border: 0 !important;
+  color: #f8fafc !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .teams-search input::placeholder,
+:is(html.dark-mode, body.dark-mode) .team-form-group input::placeholder {
+  color: #64748b !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .member-divider,
+:is(html.dark-mode, body.dark-mode) .member-card-footer {
+  border-color: #334155 !important;
+  background-color: transparent !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .member-avatar,
+:is(html.dark-mode, body.dark-mode) .teams-title-icon {
+  background: #172554 !important;
+  color: #93c5fd !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .member-menu-button {
+  color: #94a3b8 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .member-menu-button:hover {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .member-status.active {
+  background: #052e16 !important;
+  color: #34d399 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .member-status.inactive {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .team-cancel-button,
+:is(html.dark-mode, body.dark-mode) .team-modal-close {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #cbd5e1 !important;
+}

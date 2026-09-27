@@ -1,0 +1,127 @@
+/* Dashboard dark palette for the current dashboard component structure. */
+:is(html.dark-mode, body.dark-mode) .dashboard-content {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .dashboard-header h1,
+:is(html.dark-mode, body.dark-mode) .section-header h2,
+:is(html.dark-mode, body.dark-mode) .project-name,
+:is(html.dark-mode, body.dark-mode) .task-name,
+:is(html.dark-mode, body.dark-mode) .stat-card strong,
+:is(html.dark-mode, body.dark-mode) .summary-item strong {
+  color: #f8fafc !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .dashboard-header p,
+:is(html.dark-mode, body.dark-mode) .stat-card p,
+:is(html.dark-mode, body.dark-mode) .stat-card-top span:first-child,
+:is(html.dark-mode, body.dark-mode) .section-header p,
+:is(html.dark-mode, body.dark-mode) .summary-item span {
+  color: #94a3b8 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .dashboard-date,
+:is(html.dark-mode, body.dark-mode) .stat-card,
+:is(html.dark-mode, body.dark-mode) .dashboard-section,
+:is(html.dark-mode, body.dark-mode) .dashboard-summary {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .summary-item {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .summary-item:hover {
+  background: #172235 !important;
+  border-color: #475569 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .stat-icon,
+:is(html.dark-mode, body.dark-mode) .summary-icon {
+  background: #172554 !important;
+  color: #60a5fa !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .project-table,
+:is(html.dark-mode, body.dark-mode) .task-table {
+  overflow: hidden;
+  background: #111827 !important;
+  border-color: #334155 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .project-row,
+:is(html.dark-mode, body.dark-mode) .task-row {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #cbd5e1 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .project-row.project-header,
+:is(html.dark-mode, body.dark-mode) .task-row.task-header {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .project-row:hover,
+:is(html.dark-mode, body.dark-mode) .task-row:hover {
+  background: #1e293b !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .section-action {
+  background: #172554 !important;
+  border-color: #1e3a8a !important;
+  color: #93c5fd !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .section-action:hover {
+  background: #1e3a8a !important;
+  color: #dbeafe !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .status.active,
+:is(html.dark-mode, body.dark-mode) .task-status.completed {
+  background: #052e16 !important;
+  color: #4ade80 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .status.review,
+:is(html.dark-mode, body.dark-mode) .priority.medium {
+  background: #451a03 !important;
+  color: #fbbf24 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .status.completed,
+:is(html.dark-mode, body.dark-mode) .task-status.todo {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .status.hold,
+:is(html.dark-mode, body.dark-mode) .task-status.progress {
+  background: #172554 !important;
+  color: #93c5fd !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .priority.high {
+  background: #450a0a !important;
+  color: #fca5a5 !important;
+}
+
+:is(html.dark-mode, body.dark-mode) .priority.low {
+  background: #172554 !important;
+  color: #93c5fd !important;
+}
+
+@media (max-width: 680px) {
+  :is(html.dark-mode, body.dark-mode) .project-table,
+  :is(html.dark-mode, body.dark-mode) .task-table {
+    border: 1px solid #334155 !important;
+  }
+}

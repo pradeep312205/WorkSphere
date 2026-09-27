@@ -1,0 +1,75 @@
+/* Keep the account menu readable inside the globally styled dark navbar. */
+.navbar .profile-container .profile-dropdown {
+  background: #ffffff !important;
+  border: 1px solid #e4e8ef !important;
+  color: #344054 !important;
+}
+
+.navbar .profile-container .profile-dropdown * {
+  color: #344054 !important;
+}
+
+.navbar .profile-container .profile-dropdown .dropdown-user strong {
+  color: #172033 !important;
+}
+
+.navbar .profile-container .profile-dropdown .dropdown-user span {
+  color: #7b879c !important;
+}
+
+.navbar .profile-container .profile-dropdown .dropdown-avatar {
+  background: #172033 !important;
+  color: #ffffff !important;
+}
+
+.navbar .profile-container .profile-dropdown .dropdown-divider {
+  background: #e8ecf2 !important;
+}
+
+.navbar .profile-container .profile-dropdown .dropdown-item {
+  background: transparent !important;
+  border: 0 !important;
+  color: #344054 !important;
+}
+
+.navbar .profile-container .profile-dropdown .dropdown-item:hover {
+  background: #f5f7fb !important;
+  color: #1d4ed8 !important;
+}
+
+body.dark-mode .navbar .profile-container .profile-dropdown {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode .navbar .profile-container .profile-dropdown * {
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode .navbar .profile-container .profile-dropdown .dropdown-user strong {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .navbar .profile-container .profile-dropdown .dropdown-user span {
+  color: #94a3b8 !important;
+}
+
+body.dark-mode .navbar .profile-container .profile-dropdown .dropdown-avatar {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .navbar .profile-container .profile-dropdown .dropdown-divider {
+  background: #334155 !important;
+}
+
+body.dark-mode .navbar .profile-container .profile-dropdown .dropdown-item {
+  background: transparent !important;
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode .navbar .profile-container .profile-dropdown .dropdown-item:hover {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}

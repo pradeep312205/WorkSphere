@@ -1,0 +1,5488 @@
+
+.dashboard-layout {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.dashboard-body {
+  display: flex;
+  min-height: calc(100vh - 64px);
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 32px;
+  overflow-x: auto;
+}
+
+.dashboard-header {
+  margin-bottom: 24px;
+}
+
+.dashboard-header h1 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dashboard-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.dashboard-placeholder {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.dashboard-placeholder h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.dashboard-placeholder p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 64px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 250px;
+}
+
+.menu-button {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  color: #475569;
+  padding: 6px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.brand-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.navbar-search {
+  width: 420px;
+  height: 38px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 8px;
+  color: #64748b;
+}
+
+.navbar-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.navbar-search input::placeholder {
+  color: #94a3b8;
+}
+
+.navbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.icon-button {
+  border: none;
+  background: transparent;
+  font-size: 19px;
+  color: #475569;
+  padding: 7px;
+  border-radius: 6px;
+}
+
+.icon-button:hover {
+  background: #f1f5f9;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #1d4ed8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-info strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.profile-info span {
+  font-size: 11px;
+  color: #64748b;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 240px;
+  min-width: 240px;
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-section {
+  margin-bottom: 24px;
+}
+
+.sidebar-title {
+  margin: 0 0 8px;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  height: 40px;
+  padding: 0 10px;
+  margin-bottom: 3px;
+  border-radius: 7px;
+  color: #475569;
+  font-size: 14px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-link span {
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.sidebar-link:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+/* =========================
+   DASHBOARD STATISTICS
+========================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.stat-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.stat-card-top span:first-child {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.stat-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 12px;
+  color: #94a3b8;
+}
+/* =========================
+   RECENT PROJECTS
+========================= */
+
+.dashboard-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 16px;
+}
+
+.section-header h2 {
+  margin: 0 0 5px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.section-header p {
+  margin: 0;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.section-action {
+  border: 1px solid #dbe3ed;
+  background: #ffffff;
+  color: #2563eb;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.section-action:hover {
+  background: #eff6ff;
+}
+
+.project-table {
+  width: 100%;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  min-height: 58px;
+  padding: 0 20px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 13px;
+  color: #475569;
+}
+
+.project-header {
+  min-height: 42px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.project-name {
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.status.active {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.status.review {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.status.completed {
+  background: #f1f5f9;
+  color: #475569;
+}
+/* =========================
+   MY TASKS
+========================= */
+
+.tasks-section {
+  margin-top: 24px;
+}
+
+.task-table {
+  width: 100%;
+}
+
+.task-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 0.9fr 1.2fr 1.1fr;
+  align-items: center;
+  min-height: 58px;
+  padding: 0 20px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 13px;
+  color: #475569;
+}
+
+.task-header {
+  min-height: 42px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.task-name {
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.priority,
+.task-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.priority.high {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.priority.medium {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.priority.low {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.task-status.progress {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.task-status.todo {
+  background: #f1f5f9;
+  color: #475569;
+}
+/* =========================
+   RECENT ACTIVITY
+========================= */
+
+.activity-section {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.activity-list {
+  width: 100%;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 0 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.activity-avatar {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.activity-content {
+  min-width: 0;
+}
+
+.activity-content p {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.activity-content strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.activity-content span {
+  font-size: 11px;
+  color: #94a3b8;
+}
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Smaller desktops / laptops */
+@media (max-width: 1100px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navbar-search {
+    width: 300px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 800px) {
+  .navbar-left {
+    min-width: auto;
+  }
+
+  .navbar-search {
+    display: none;
+  }
+
+  .profile-info {
+    display: none;
+  }
+
+  .sidebar {
+    width: 210px;
+    min-width: 210px;
+  }
+
+  .dashboard-content {
+    padding: 24px;
+  }
+
+  .project-table,
+  .task-table {
+    overflow-x: auto;
+  }
+
+  .project-row {
+    min-width: 700px;
+  }
+
+  .task-row {
+    min-width: 850px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 14px;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .navbar-left {
+    gap: 8px;
+  }
+
+  .navbar-right {
+    gap: 8px;
+  }
+
+  .dashboard-body {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .dashboard-content {
+    padding: 20px 14px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 21px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .section-header {
+    padding: 16px;
+  }
+
+  .project-row {
+    padding: 0 16px;
+  }
+
+  .task-row {
+    padding: 0 16px;
+  }
+
+  .activity-item {
+    padding: 0 16px;
+  }
+}
+/* =========================
+   MOBILE SIDEBAR
+========================= */
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    display: flex;
+    position: fixed;
+    top: 64px;
+    left: -240px;
+    width: 240px;
+    min-width: 240px;
+    height: calc(100vh - 64px);
+    z-index: 200;
+    transition: left 0.2s ease;
+    box-shadow: 4px 0 16px rgba(15, 23, 42, 0.08);
+  }
+
+  .sidebar.mobile-open {
+    left: 0;
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 64px 0 0;
+    background: rgba(15, 23, 42, 0.25);
+    z-index: 150;
+  }
+}
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.auth-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   MAIN LAYOUT
+   60% IMAGE / 40% LOGIN
+========================= */
+
+.auth-layout {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 60% 40%;
+
+  margin: 0;
+  padding: 0;
+
+  background: #ffffff;
+}
+
+
+/* =========================
+   LEFT IMAGE
+========================= */
+
+.auth-image {
+  width: 100%;
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+}
+
+.auth-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+/* =========================
+   RIGHT LOGIN AREA
+========================= */
+
+.auth-container {
+  width: 100%;
+  height: 100vh;
+
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0 48px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 30px;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #0f172a;
+}
+
+.auth-brand .brand-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.auth-header {
+  margin-bottom: 27px;
+}
+
+.auth-header h1 {
+  margin: 0 0 7px;
+
+  font-size: 29px;
+
+  line-height: 1.2;
+
+  font-weight: 600;
+
+  color: #0f172a;
+}
+
+.auth-header p {
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  color: #64748b;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.auth-form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+
+  line-height: 1.4;
+
+  font-weight: 500;
+
+  color: #0f172a;
+}
+
+
+/* =========================
+   INPUT WRAPPER
+========================= */
+
+.input-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-wrapper input {
+  width: 100%;
+
+  height: 52px;
+
+  box-sizing: border-box;
+
+  padding: 0 44px 0 16px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  color: #0f172a;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-wrapper input::placeholder {
+  color: #94a3b8;
+}
+
+.input-wrapper input:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px #dbeafe;
+}
+
+
+/* =========================
+   INPUT ICON
+========================= */
+
+.input-icon {
+  position: absolute;
+
+  right: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+.forgot-password {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 1px;
+}
+
+.forgot-password a {
+  font-size: 13px;
+
+  color: #2563eb;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   SIGN IN BUTTON
+========================= */
+
+.auth-button {
+  width: 100%;
+
+  height: 54px;
+
+  margin-top: 1px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.auth-button:hover {
+  background: #1d4ed8;
+}
+
+.auth-button:active {
+  transform: translateY(1px);
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.auth-divider {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin: 24px 0;
+}
+
+.auth-divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background: #e2e8f0;
+}
+
+.auth-divider p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #64748b;
+}
+
+
+/* =========================
+   REGISTER FOOTER
+========================= */
+
+.auth-footer {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 13px;
+
+  color: #64748b;
+
+  white-space: nowrap;
+}
+
+.auth-footer a {
+  color: #2563eb;
+
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1400px) {
+
+  .auth-container {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  .auth-brand {
+    font-size: 21px;
+  }
+
+  .auth-brand .brand-icon {
+    width: 40px;
+    height: 40px;
+
+    font-size: 22px;
+  }
+
+  .auth-header h1 {
+    font-size: 31px;
+  }
+
+  .auth-header p {
+    font-size: 16px;
+  }
+
+  .input-wrapper input {
+    height: 54px;
+
+    font-size: 15px;
+  }
+
+  .auth-button {
+    height: 56px;
+
+    font-size: 16px;
+  }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+  .auth-layout {
+    grid-template-columns: 58% 42%;
+  }
+
+  .auth-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .auth-brand {
+    font-size: 18px;
+  }
+
+  .auth-brand .brand-icon {
+    width: 36px;
+    height: 36px;
+
+    font-size: 20px;
+  }
+
+  .auth-header h1 {
+    font-size: 26px;
+  }
+
+  .auth-header p {
+    font-size: 14px;
+  }
+
+  .input-wrapper input {
+    height: 50px;
+  }
+
+  .auth-button {
+    height: 52px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  .auth-page {
+    height: auto;
+    min-height: 100vh;
+
+    overflow-y: auto;
+  }
+
+  .auth-layout {
+    width: 100%;
+
+    height: auto;
+    min-height: 100vh;
+
+    grid-template-columns: 1fr;
+  }
+
+  .auth-image {
+    width: 100%;
+
+    height: 280px;
+    min-height: 280px;
+  }
+
+  .auth-image img {
+    object-fit: cover;
+
+    object-position: center center;
+  }
+
+  .auth-container {
+    width: 100%;
+
+    height: auto;
+    min-height: auto;
+
+    margin: 0;
+
+    padding: 40px 28px;
+
+    box-sizing: border-box;
+  }
+
+  .auth-brand {
+    margin-bottom: 28px;
+  }
+
+  .auth-header {
+    margin-bottom: 26px;
+  }
+
+  .auth-header h1 {
+    font-size: 27px;
+  }
+
+  .auth-header p {
+    font-size: 15px;
+  }
+
+  .input-wrapper input {
+    height: 52px;
+
+    font-size: 14px;
+  }
+
+  .auth-button {
+    height: 54px;
+
+    font-size: 15px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+  .auth-image {
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .auth-container {
+    padding: 30px 20px;
+  }
+
+  .auth-brand {
+    font-size: 18px;
+  }
+
+  .auth-brand .brand-icon {
+    width: 35px;
+    height: 35px;
+
+    font-size: 19px;
+  }
+
+  .auth-header h1 {
+    font-size: 25px;
+  }
+
+  .auth-header p {
+    font-size: 14px;
+  }
+
+  .input-wrapper input {
+    height: 50px;
+
+    font-size: 14px;
+  }
+
+  .auth-button {
+    height: 52px;
+  }
+
+  .auth-footer {
+    font-size: 12px;
+  }
+}
+/* =========================
+   3D LOGIN EFFECT
+========================= */
+
+.auth-container {
+  width: 100%;
+  height: 100vh;
+
+  box-sizing: border-box;
+
+  padding: 0 48px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* subtle depth */
+  perspective: 1000px;
+}
+
+
+/* Login content gets a subtle 3D lift */
+.auth-container > * {
+  position: relative;
+
+  transform: translateZ(0);
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+
+/* Brand */
+.auth-brand {
+  transform: translateZ(12px);
+}
+
+
+/* Header */
+.auth-header {
+  transform: translateZ(18px);
+}
+
+
+/* Form */
+.auth-form {
+  transform: translateZ(24px);
+}
+
+
+/* Divider */
+.auth-divider {
+  transform: translateZ(12px);
+}
+
+
+/* Footer */
+.auth-footer {
+  transform: translateZ(8px);
+}
+
+
+/* =========================
+   INPUT 3D EFFECT
+========================= */
+
+.input-wrapper input {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.input-wrapper input:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.input-wrapper input:focus {
+  transform: translateY(-2px);
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.15);
+}
+
+
+/* =========================
+   BUTTON 3D EFFECT
+========================= */
+
+.auth-button {
+  position: relative;
+
+  transform: translateZ(10px);
+
+  box-shadow:
+    0 5px 0 #1d4ed8,
+    0 9px 18px rgba(37, 99, 235, 0.18);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.2s ease;
+}
+
+.auth-button:hover {
+  transform:
+    translateY(-3px)
+    translateZ(15px);
+
+  box-shadow:
+    0 7px 0 #1d4ed8,
+    0 14px 24px rgba(37, 99, 235, 0.22);
+}
+
+.auth-button:active {
+  transform: translateY(2px);
+
+  box-shadow:
+    0 2px 0 #1d4ed8,
+    0 5px 10px rgba(37, 99, 235, 0.15);
+}
+
+
+/* =========================
+   BRAND ICON 3D
+========================= */
+
+.auth-brand .brand-icon {
+  box-shadow:
+    0 5px 10px rgba(37, 99, 235, 0.25);
+
+  transform: translateZ(15px);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.auth-brand .brand-icon:hover {
+  transform:
+    translateY(-3px)
+    rotateY(8deg)
+    translateZ(20px);
+
+  box-shadow:
+    0 9px 18px rgba(37, 99, 235, 0.30);
+}
+/* =========================
+   3D IMAGE EFFECT
+========================= */
+
+.auth-image {
+  position: relative;
+  overflow: hidden;
+
+  perspective: 1200px;
+}
+
+.auth-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transform: scale(1.02) translateZ(0);
+
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+
+/* Subtle depth when hovering the image */
+.auth-image:hover img {
+  transform: scale(1.05) translateZ(20px);
+}
+
+
+/* Soft 3D lighting overlay */
+.auth-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 35%,
+      rgba(15, 23, 42, 0.08)
+    );
+}
+
+
+/* =========================
+   IMAGE + LOGIN DEPTH
+========================= */
+
+.auth-layout {
+  perspective: 1400px;
+}
+
+.auth-image,
+.auth-container {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* Slight separation between image and login */
+.auth-image {
+  box-shadow:
+    8px 0 25px rgba(15, 23, 42, 0.08);
+}
+/* =========================
+   REPEATING 3D IMAGE
+========================= */
+
+.auth-image {
+  position: relative;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+
+/* IMAGE */
+
+.auth-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transform-origin: center center;
+
+  animation: image3D 6s ease-in-out infinite;
+}
+
+
+/* =========================
+   3D FLOAT + ZOOM
+========================= */
+
+@keyframes image3D {
+
+  0% {
+    transform:
+      scale(1)
+      rotateX(0deg)
+      rotateY(0deg)
+      translateZ(0);
+  }
+
+  25% {
+    transform:
+      scale(1.025)
+      rotateX(1deg)
+      rotateY(-1deg)
+      translateZ(8px);
+  }
+
+  50% {
+    transform:
+      scale(1.04)
+      rotateX(0deg)
+      rotateY(1.5deg)
+      translateZ(15px);
+  }
+
+  75% {
+    transform:
+      scale(1.025)
+      rotateX(-1deg)
+      rotateY(-1deg)
+      translateZ(8px);
+  }
+
+  100% {
+    transform:
+      scale(1)
+      rotateX(0deg)
+      rotateY(0deg)
+      translateZ(0);
+  }
+}
+
+
+/* =========================
+   REPEATING LIGHT SWEEP
+========================= */
+
+.auth-image::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 55%;
+  height: 100%;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.16),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: imageLight 5s ease-in-out infinite;
+}
+
+
+@keyframes imageLight {
+
+  0% {
+    left: -120%;
+  }
+
+  35% {
+    left: 140%;
+  }
+
+  100% {
+    left: 140%;
+  }
+}
+/* =========================
+   LOGIN SIDE ANIMATION
+========================= */
+
+/* Brand comes in smoothly */
+.auth-brand {
+  animation: loginBrand 0.8s ease-out both;
+}
+
+@keyframes loginBrand {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   HEADER ANIMATION
+========================= */
+
+.auth-header {
+  animation: loginHeader 0.8s ease-out 0.15s both;
+}
+
+@keyframes loginHeader {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================
+   FORM ANIMATION
+========================= */
+
+.auth-form {
+  animation: loginForm 0.8s ease-out 0.3s both;
+}
+
+@keyframes loginForm {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   INPUT HOVER 3D
+========================= */
+
+.input-wrapper input {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.input-wrapper input:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px rgba(15, 23, 42, 0.08);
+}
+
+.input-wrapper input:focus {
+  transform: translateY(-2px);
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 7px 20px rgba(37, 99, 235, 0.16);
+}
+
+
+/* =========================
+   BUTTON 3D ANIMATION
+========================= */
+
+.auth-button {
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 0 #1d4ed8,
+    0 8px 16px rgba(37, 99, 235, 0.15);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.auth-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 7px 0 #1d4ed8,
+    0 13px 24px rgba(37, 99, 235, 0.22);
+}
+
+.auth-button:active {
+  transform: translateY(2px);
+
+  box-shadow:
+    0 2px 0 #1d4ed8,
+    0 4px 8px rgba(37, 99, 235, 0.15);
+}
+
+
+/* =========================
+   BUTTON LIGHT SWEEP
+========================= */
+
+.auth-button::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 55%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: buttonLight 4s ease-in-out infinite;
+}
+
+@keyframes buttonLight {
+  0% {
+    left: -120%;
+  }
+
+  30% {
+    left: 140%;
+  }
+
+  100% {
+    left: 140%;
+  }
+}
+
+
+/* =========================
+   BRAND ICON FLOAT
+========================= */
+
+.auth-brand .brand-icon {
+  animation: brandFloat 3s ease-in-out 1s infinite;
+}
+
+@keyframes brandFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotateY(8deg);
+  }
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+.forgot-password a {
+  position: relative;
+}
+
+.forgot-password a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -2px;
+
+  width: 0;
+  height: 1px;
+
+  background: #2563eb;
+
+  transition: width 0.25s ease;
+}
+
+.forgot-password a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================
+   CREATE ACCOUNT
+========================= */
+
+.auth-footer a {
+  position: relative;
+}
+
+.auth-footer a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -2px;
+
+  width: 0;
+  height: 1px;
+
+  background: #2563eb;
+
+  transition: width 0.25s ease;
+}
+
+.auth-footer a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-brand,
+  .auth-header,
+  .auth-form,
+  .auth-brand .brand-icon,
+  .auth-button::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* =========================
+   REGISTER PAGE POLISH
+========================= */
+
+.auth-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* Repeating 3D image animation */
+.auth-image img {
+  animation: registerImage3D 7s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes registerImage3D {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.015) translateY(-3px);
+  }
+
+  50% {
+    transform: scale(1.025) translateY(0);
+  }
+
+  75% {
+    transform: scale(1.015) translateY(3px);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Register form entrance */
+.auth-container {
+  animation: registerPanel 0.7s ease-out;
+}
+
+@keyframes registerPanel {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Input hover */
+.auth-container .input-wrapper input {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.auth-container .input-wrapper input:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+
+/* Register button */
+.auth-container .auth-button {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+
+  box-shadow:
+    0 4px 0 #1d4ed8,
+    0 8px 18px rgba(37, 99, 235, 0.16);
+}
+
+.auth-container .auth-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 7px 0 #1d4ed8,
+    0 13px 24px rgba(37, 99, 235, 0.22);
+}
+
+.auth-container .auth-button:active {
+  transform: translateY(2px);
+
+  box-shadow:
+    0 2px 0 #1d4ed8,
+    0 5px 10px rgba(37, 99, 235, 0.15);
+}
+
+
+/* Mobile */
+@media (max-width: 800px) {
+  .auth-image img {
+    animation: none;
+  }
+}
+/* =========================
+   PASSWORD VISIBILITY
+========================= */
+
+.password-toggle {
+  position: absolute;
+
+  right: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #64748b;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  padding: 0;
+
+  border-radius: 6px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #2563eb;
+
+  background: #eff6ff;
+}
+
+.password-toggle:focus {
+  outline: none;
+
+  color: #2563eb;
+}
+
+
+/* Make room for eye button */
+.input-wrapper input[type="password"],
+.input-wrapper input[type="text"] {
+  padding-right: 45px;
+}
+/* =========================
+   REGISTER VALIDATION
+========================= */
+
+.form-error {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  color: #dc2626;
+
+  animation: errorAppear 0.2s ease-out;
+}
+
+.input-error {
+  border-color: #dc2626 !important;
+}
+
+.input-error:focus {
+  border-color: #dc2626 !important;
+
+  box-shadow:
+    0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+@keyframes errorAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.home-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* HERO */
+
+.hero-section {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  padding: 80px 8%;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero-content h1 {
+  margin: 0;
+  font-size: 58px;
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #0f172a;
+}
+
+.hero-content h1 span {
+  color: #2563eb;
+}
+
+.hero-content p {
+  margin-top: 24px;
+  max-width: 560px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+/* BUTTONS */
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.primary-button,
+.secondary-button {
+  height: 48px;
+  padding: 0 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.primary-button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
+}
+
+.primary-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #334155;
+}
+
+.secondary-button:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+/* DASHBOARD PREVIEW */
+
+.hero-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-card {
+  width: 100%;
+  max-width: 560px;
+  padding: 28px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.08),
+    0 5px 15px rgba(15, 23, 42, 0.04);
+  box-sizing: border-box;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card-header small {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 5px #dcfce7;
+}
+
+/* HOME STAT CARDS */
+
+.home-page .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.home-page .stat-card {
+  min-height: 100px;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+.home-page .stat-card small {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.home-page .stat-card strong {
+  font-size: 28px;
+  color: #0f172a;
+}
+
+/* PROGRESS */
+
+.progress-section {
+  margin-top: 10px;
+}
+
+.progress-section > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.progress-section > div:first-child span:last-child {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e2e8f0;
+}
+
+.progress-value {
+  width: 72%;
+  height: 100%;
+  border-radius: 20px;
+  background: #2563eb;
+}
+
+/* TRUSTED SECTION */
+
+.trusted-section {
+  padding: 0 8% 50px;
+  text-align: center;
+}
+
+.trusted-section p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+
+/* =========================================
+   HOME RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding: 70px 6%;
+    gap: 50px;
+  }
+
+  .hero-content {
+    max-width: 700px;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .hero-preview {
+    justify-content: flex-start;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .hero-section {
+    min-height: auto;
+    padding: 50px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .dashboard-card {
+    padding: 20px;
+  }
+
+  .home-page .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trusted-section {
+    padding: 0 20px 40px;
+  }
+}
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+.logout-button {
+  padding: 10px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #374151;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.logout-button:hover {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+
+  transform: translateY(-1px);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+}
+
+.logout-button:focus {
+  outline: none;
+}
+
+.logout-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+/* =========================
+   PROFILE CONTAINER
+========================= */
+
+.profile-container {
+  position: relative;
+}
+
+
+/* =========================
+   PROFILE BUTTON
+========================= */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border: none;
+  background: transparent;
+
+  padding: 6px 8px;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease;
+}
+
+.profile:hover {
+  background: #f5f7fa;
+}
+
+
+/* =========================
+   PROFILE AVATAR
+========================= */
+
+.profile-avatar {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #111827;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   PROFILE INFO
+========================= */
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.profile-info strong {
+  font-size: 14px;
+  color: #111827;
+}
+
+.profile-info span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+
+/* =========================
+   PROFILE ARROW
+========================= */
+
+.profile-arrow {
+  margin-left: 4px;
+
+  font-size: 9px;
+  color: #6b7280;
+}
+
+
+/* =========================
+   PROFILE DROPDOWN
+========================= */
+
+.profile-menu {
+  position: absolute;
+
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 250px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  padding: 8px;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.10);
+
+  z-index: 1000;
+
+  animation: profileMenuIn 0.15s ease;
+}
+
+
+/* =========================
+   MENU USER
+========================= */
+
+.profile-menu-user {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px;
+}
+
+.profile-menu-user > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.profile-menu-user strong {
+  font-size: 14px;
+  color: #111827;
+}
+
+.profile-menu-user span {
+  font-size: 12px;
+  color: #6b7280;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================
+   MENU AVATAR
+========================= */
+
+.profile-menu-avatar {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #111827;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.profile-menu-divider {
+  height: 1px;
+
+  background: #e5e7eb;
+
+  margin: 6px 0;
+}
+
+
+/* =========================
+   MENU ITEMS
+========================= */
+
+.profile-menu-item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #374151;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.profile-menu-item:hover {
+  background: #f5f7fa;
+}
+
+.profile-menu-item > span:first-child {
+  width: 20px;
+
+  text-align: center;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.profile-menu-item.logout-item {
+  color: #dc2626;
+}
+
+.profile-menu-item.logout-item:hover {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes profileMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =========================
+   SETTINGS PAGE
+========================= */
+
+.settings-page {
+  padding: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  margin-bottom: 28px;
+}
+
+.settings-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #172033;
+}
+
+.settings-header p {
+  margin-top: 8px;
+  color: #71809a;
+  font-size: 15px;
+}
+
+
+/* =========================
+   SETTINGS CARD
+========================= */
+
+.settings-card {
+  background: #ffffff;
+  border: 1px solid #e1e7f0;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(20, 40, 80, 0.04);
+}
+
+.settings-card-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edf0f5;
+  margin-bottom: 24px;
+}
+
+.settings-card-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #172033;
+}
+
+.settings-card-header p {
+  margin: 7px 0 0;
+  color: #7b879c;
+  font-size: 14px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.settings-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.settings-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #344054;
+}
+
+.settings-form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #d7deea;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  color: #172033;
+  background: #ffffff;
+  transition: 0.2s ease;
+}
+
+.settings-form-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.settings-success {
+  margin: 20px 0 0;
+  color: #15803d;
+  font-size: 14px;
+  font-weight: 500;
+}
+.settings-error {
+  margin: 20px 0 0;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   SAVE BUTTON
+========================= */
+
+.settings-save-button {
+  margin-top: 22px;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 20px;
+  background: #2563eb;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.settings-save-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.settings-account-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.settings-account-row h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #172033;
+}
+
+.settings-account-row p {
+  margin: 6px 0 0;
+  color: #7b879c;
+  font-size: 14px;
+}
+
+.settings-logout-button {
+  flex-shrink: 0;
+  padding: 10px 18px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fff;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.settings-logout-button:hover {
+  background: #fef2f2;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+  .settings-page {
+    padding: 20px;
+  }
+
+  .settings-form {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-account-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}
+/* =========================
+   PROFILE DROPDOWN
+========================= */
+
+.profile-container {
+  position: relative;
+}
+
+.profile {
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 7px 10px;
+  border-radius: 10px;
+}
+
+.profile:hover {
+  background: #f5f7fb;
+}
+
+.profile-arrow {
+  margin-left: 4px;
+  font-size: 12px;
+  color: #667085;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+
+  width: 270px;
+
+  background: #ffffff;
+  border: 1px solid #e4e8ef;
+  border-radius: 14px;
+
+  padding: 10px;
+
+  box-shadow:
+    0 12px 30px rgba(16, 24, 40, 0.12);
+
+  z-index: 1000;
+}
+
+
+/* =========================
+   DROPDOWN USER
+========================= */
+
+.dropdown-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px;
+}
+
+.dropdown-avatar {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #172033;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.dropdown-user div:last-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dropdown-user strong {
+  color: #172033;
+  font-size: 14px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-user span {
+  margin-top: 4px;
+
+  color: #7b879c;
+  font-size: 12px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.dropdown-divider {
+  height: 1px;
+  background: #e8ecf2;
+  margin: 5px 0;
+}
+
+
+/* =========================
+   DROPDOWN BUTTONS
+========================= */
+
+.dropdown-item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border: none;
+  background: transparent;
+
+  padding: 12px 10px;
+
+  border-radius: 8px;
+
+  color: #344054;
+
+  font-size: 14px;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: #f5f7fb;
+}
+
+.dropdown-icon {
+  width: 20px;
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-item {
+  color: #dc2626;
+}
+
+.logout-item:hover {
+  background: #fef2f2;
+}
+/* =====================================================
+   WORKSPHERE COMMON APPLICATION SHELL
+===================================================== */
+
+.app-layout {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.app-body {
+  display: flex;
+  min-height: calc(100vh - 64px);
+}
+
+.app-main {
+  flex: 1;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+.theme-button {
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #475569;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.theme-button:hover {
+  transform: translateY(-2px);
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+
+/* =====================================================
+   PROFILE BUTTON
+===================================================== */
+
+.profile-button {
+  border: 0;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 4px 6px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.profile-button:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.profile-chevron {
+  transition: transform 0.2s ease;
+}
+
+.profile-chevron.open {
+  transform: rotate(180deg);
+}
+
+
+/* =====================================================
+   PROJECTS APPLICATION SHELL
+===================================================== */
+
+.app-layout .projects-page {
+  min-height: calc(100vh - 64px);
+}
+
+
+/* =====================================================
+   STRONGER DASHBOARD ANIMATION
+===================================================== */
+
+.stat-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-7px) scale(1.01);
+  box-shadow:
+    0 14px 30px rgba(15, 23, 42, 0.09);
+}
+
+.dashboard-section {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.dashboard-section:hover {
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.055);
+}
+
+
+/* =====================================================
+   PROJECT / TASK ROW ANIMATION
+===================================================== */
+
+.project-row:not(.project-header),
+.task-row:not(.task-header),
+.activity-item {
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease;
+}
+
+.project-row:not(.project-header):hover,
+.task-row:not(.task-header):hover,
+.activity-item:hover {
+  transform: translateX(5px);
+  background: #f8fbff;
+}
+
+
+/* =====================================================
+   DASHBOARD DATE
+===================================================== */
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.dashboard-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-width: 150px;
+
+  padding: 9px 13px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+.dark-mode body {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.dark-mode .app-layout,
+.dark-mode .dashboard-layout {
+  background: #0f172a;
+}
+
+.dark-mode .dashboard-content,
+.dark-mode .app-main {
+  background: #0f172a;
+}
+
+
+/* NAVBAR */
+
+.dark-mode .navbar {
+  background: #111827;
+  border-color: #1e293b;
+}
+
+.dark-mode .brand {
+  color: #f8fafc;
+}
+
+.dark-mode .navbar-search {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.dark-mode .navbar-search input {
+  color: #f8fafc;
+}
+
+.dark-mode .navbar-search input::placeholder {
+  color: #94a3b8;
+}
+
+.dark-mode .theme-button,
+.dark-mode .icon-button {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+.dark-mode .theme-button:hover,
+.dark-mode .icon-button:hover {
+  background: #334155;
+}
+
+
+/* SIDEBAR */
+
+.dark-mode .sidebar {
+  background: #111827;
+  border-color: #1e293b;
+}
+
+.dark-mode .sidebar-title {
+  color: #64748b;
+}
+
+.dark-mode .sidebar-link {
+  color: #cbd5e1;
+}
+
+.dark-mode .sidebar-link:hover {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+.dark-mode .sidebar-link.active {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+
+/* PROFILE */
+
+.dark-mode .profile-button:hover {
+  background: #1e293b;
+}
+
+.dark-mode .profile-info strong {
+  color: #f8fafc;
+}
+
+.dark-mode .profile-info span {
+  color: #94a3b8;
+}
+
+.dark-mode .profile-dropdown {
+  background: #111827;
+  border-color: #334155;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.dark-mode .dropdown-user strong {
+  color: #f8fafc;
+}
+
+.dark-mode .dropdown-user span {
+  color: #94a3b8;
+}
+
+.dark-mode .dropdown-divider {
+  background: #334155;
+}
+
+.dark-mode .dropdown-item {
+  color: #cbd5e1;
+}
+
+.dark-mode .dropdown-item:hover {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+
+/* DASHBOARD */
+
+.dark-mode .dashboard-header h1,
+.dark-mode .dashboard-section h2 {
+  color: #f8fafc;
+}
+
+.dark-mode .dashboard-header p,
+.dark-mode .section-header p {
+  color: #94a3b8;
+}
+
+.dark-mode .dashboard-date {
+  background: #111827;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+.dark-mode .stat-card,
+.dark-mode .dashboard-section {
+  background: #111827;
+  border-color: #334155;
+}
+
+.dark-mode .stat-card:hover {
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+.dark-mode .stat-card strong {
+  color: #f8fafc;
+}
+
+.dark-mode .stat-card p {
+  color: #94a3b8;
+}
+
+.dark-mode .project-header,
+.dark-mode .task-header {
+  background: #1e293b;
+}
+
+.dark-mode .project-row,
+.dark-mode .task-row {
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+.dark-mode .project-row:not(.project-header):hover,
+.dark-mode .task-row:not(.task-header):hover,
+.dark-mode .activity-item:hover {
+  background: #1e293b;
+}
+
+.dark-mode .project-name,
+.dark-mode .task-name {
+  color: #f8fafc;
+}
+
+.dark-mode .activity-content p {
+  color: #cbd5e1;
+}
+
+.dark-mode .activity-content span {
+  color: #64748b;
+}
+
+
+/* PROJECTS */
+
+.dark-mode .projects-page {
+  background: #0f172a;
+}
+
+.dark-mode .projects-page h1,
+.dark-mode .projects-page h2,
+.dark-mode .projects-page h3 {
+  color: #f8fafc;
+}
+
+.dark-mode .projects-page p {
+  color: #94a3b8;
+}
+
+.dark-mode .project-summary-card,
+.dark-mode .project-card {
+  background: #111827;
+  border-color: #334155;
+}
+
+.dark-mode .projects-toolbar input,
+.dark-mode .projects-filter {
+  background: #111827;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .dashboard-header {
+    align-items: flex-start;
+  }
+
+  .dashboard-date {
+    min-width: auto;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .dashboard-header {
+    flex-direction: column;
+  }
+
+  .dashboard-date {
+    align-self: flex-start;
+  }
+
+  .app-body {
+    display: block;
+  }
+
+}
+/* ================================
+   DASHBOARD SUMMARY
+   ================================ */
+
+.dashboard-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+  margin-bottom: 30px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.summary-item:hover {
+  transform: translateY(-4px);
+  border-color: #bfdbfe;
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+}
+
+.summary-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #eff6ff;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.summary-item div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.summary-item strong {
+  font-size: 22px;
+  font-weight: 700;
+  color: #172033;
+  line-height: 1;
+}
+
+.summary-item span {
+  font-size: 13px;
+  color: #71819b;
+}
+
+/* ================================
+   DASHBOARD RESPONSIVE
+   ================================ */
+
+@media (max-width: 900px) {
+  .dashboard-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboard-summary {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   FORCE HEADER TO STAY WHITE IN LIGHT MODE
+   ========================================================= */
+
+header {
+  background: #ffffff !important;
+  color: #172033 !important;
+}
+
+/* Header search box */
+header input {
+  background: #ffffff !important;
+  color: #172033 !important;
+  border: 1px solid #dce4ef !important;
+  box-shadow: none !important;
+}
+
+header input::placeholder {
+  color: #8a99b0 !important;
+}
+
+/* Search container */
+header form,
+header .search,
+header .search-box {
+  background: #ffffff !important;
+  color: #172033 !important;
+}
+
+/* Theme / notification buttons */
+header button {
+  background: #ffffff !important;
+  color: #172033 !important;
+  border: 1px solid #dce4ef !important;
+}
+
+header button:hover {
+  background: #f1f5f9 !important;
+  color: #2563eb !important;
+}
+
+/* Profile area */
+header .profile,
+header .user-profile,
+header .profile-section {
+  background: #ffffff !important;
+  color: #172033 !important;
+}
+
+/* All text inside header */
+header span,
+header p,
+header div {
+  color: inherit;
+}
+
+/* Profile name */
+header .profile-name,
+header .user-name {
+  color: #172033 !important;
+}
+
+/* Profile role */
+header .profile-role,
+header .user-role {
+  color: #64748b !important;
+}
+
+/* Keep profile circle dark */
+header .avatar,
+header .profile-avatar {
+  background: #111827 !important;
+  color: #ffffff !important;
+}
+/* =========================================================
+   WORKSPHERE LIGHT MODE - FINAL UI
+   Header = White
+   Sidebar = Dark Navy
+   Main = Light
+   ========================================================= */
+
+/* =========================
+   MAIN APPLICATION
+========================= */
+
+.app-layout {
+  min-height: 100vh;
+  background: #f8fafc !important;
+}
+
+.app-body {
+  background: #f8fafc !important;
+}
+
+
+/* =========================================================
+   HEADER / NAVBAR
+========================================================= */
+
+.navbar {
+  height: 64px !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+
+  color: #0f172a !important;
+}
+
+
+/* Menu button */
+
+.navbar .menu-button {
+  background: transparent !important;
+  border: none !important;
+  color: #475569 !important;
+}
+
+.navbar .menu-button:hover {
+  background: #f1f5f9 !important;
+  color: #2563eb !important;
+}
+
+
+/* Brand */
+
+.navbar .brand {
+  background: transparent !important;
+  color: #0f172a !important;
+}
+
+.navbar .brand-icon {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   NAVBAR SEARCH
+========================================================= */
+
+.navbar .navbar-search {
+  background: #ffffff !important;
+  border: 1px solid #dce4ef !important;
+  color: #64748b !important;
+  box-shadow: none !important;
+}
+
+.navbar .navbar-search input {
+  background: transparent !important;
+  border: none !important;
+  color: #0f172a !important;
+}
+
+.navbar .navbar-search input::placeholder {
+  color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.navbar .theme-button {
+  width: 38px !important;
+  height: 38px !important;
+
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
+
+  border-radius: 9px !important;
+}
+
+.navbar .theme-button:hover {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #2563eb !important;
+}
+
+
+/* =========================================================
+   NOTIFICATION BUTTON
+========================================================= */
+
+.navbar .icon-button {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
+
+  border-radius: 9px !important;
+}
+
+.navbar .icon-button:hover {
+  background: #f1f5f9 !important;
+  color: #2563eb !important;
+}
+
+
+/* =========================================================
+   PROFILE BUTTON
+========================================================= */
+
+.navbar .profile-button,
+.navbar .profile {
+  background: #ffffff !important;
+  border: none !important;
+  color: #0f172a !important;
+}
+
+.navbar .profile-button:hover,
+.navbar .profile:hover {
+  background: #f8fafc !important;
+}
+
+
+/* Profile name */
+
+.navbar .profile-info strong {
+  color: #0f172a !important;
+}
+
+
+/* Profile role */
+
+.navbar .profile-info span {
+  color: #64748b !important;
+}
+
+
+/* Profile arrow */
+
+.navbar .profile-arrow,
+.navbar .profile-chevron {
+  color: #475569 !important;
+}
+
+
+/* Profile avatar */
+
+.navbar .profile-avatar {
+  background: #111827 !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SIDEBAR - DARK IN LIGHT MODE
+========================================================= */
+
+.sidebar {
+  width: 240px !important;
+  min-width: 240px !important;
+
+  background: #111827 !important;
+  border-right: 1px solid #1e293b !important;
+
+  color: #ffffff !important;
+}
+
+
+/* Sidebar section title */
+
+.sidebar .sidebar-title {
+  color: #64748b !important;
+}
+
+
+/* Sidebar links */
+
+.sidebar .sidebar-link {
+  color: #e2e8f0 !important;
+  background: transparent !important;
+}
+
+
+/* Sidebar icons */
+
+.sidebar .sidebar-link span {
+  color: inherit !important;
+}
+
+
+/* Sidebar hover */
+
+.sidebar .sidebar-link:hover {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   ACTIVE SIDEBAR ITEM
+========================================================= */
+
+.sidebar .sidebar-link.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+
+  box-shadow:
+    0 4px 12px rgba(37, 99, 235, 0.30) !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.app-main,
+.dashboard-content {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+========================================================= */
+
+.dashboard-header h1 {
+  color: #0f172a !important;
+}
+
+.dashboard-header p {
+  color: #64748b !important;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.stat-card,
+.dashboard-section,
+.dashboard-date {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+
+/* Card text */
+
+.stat-card strong,
+.section-header h2,
+.project-name,
+.task-name {
+  color: #0f172a !important;
+}
+
+
+/* Secondary text */
+
+.stat-card p,
+.stat-card-top span:first-child,
+.section-header p {
+  color: #64748b !important;
+}
+
+
+/* =========================================================
+   DO NOT ALLOW DARK MODE BUTTON COLORS
+   IN NORMAL LIGHT MODE
+========================================================= */
+
+body:not(.dark-mode) .navbar {
+  background: #ffffff !important;
+}
+
+body:not(.dark-mode) .navbar .theme-button,
+body:not(.dark-mode) .navbar .icon-button {
+  background: #ffffff !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+
+body:not(.dark-mode) .navbar .profile-button,
+body:not(.dark-mode) .navbar .profile {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .sidebar {
+    background: #111827 !important;
+  }
+
+}
+/* ================================
+   PERMANENT BLUE HEADER
+   ================================ */
+
+header,
+.navbar,
+.top-navbar,
+.topbar {
+  background: #2563eb !important;
+  color: white !important;
+  border-bottom: 1px solid #1d4ed8 !important;
+}
+
+/* Header text */
+header *,
+.navbar *,
+.top-navbar *,
+.topbar * {
+  color: white;
+}
+
+/* Search box in blue header */
+header input,
+.navbar input,
+.top-navbar input,
+.topbar input {
+  background: white !important;
+  color: #1e293b !important;
+  border: none !important;
+}
+
+header input::placeholder,
+.navbar input::placeholder,
+.top-navbar input::placeholder {
+  color: #64748b !important;
+}
+
+/* Header buttons */
+header button,
+.navbar button,
+.top-navbar button,
+.topbar button {
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Header button hover */
+header button:hover,
+.navbar button:hover,
+.top-navbar button:hover,
+.topbar button:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Profile area */
+header .profile,
+.navbar .profile,
+.top-navbar .profile,
+.topbar .profile {
+  color: white !important;
+}
+/* =========================================================
+   WORKSPHERE - DARK BLUE HEADER
+   SAME COLOR AS SIDEBAR
+   ========================================================= */
+
+body:not(.dark-mode) .navbar,
+body:not(.dark-mode) header,
+body:not(.dark-mode) .top-navbar,
+body:not(.dark-mode) .topbar {
+  background: #111827 !important;
+  background-color: #111827 !important;
+  border-bottom: 1px solid #1e293b !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+   ========================================================= */
+
+body:not(.dark-mode) .navbar * {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   MENU BUTTON
+   ========================================================= */
+
+body:not(.dark-mode) .navbar .menu-button {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+body:not(.dark-mode) .navbar .menu-button:hover {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   WORKSPHERE BRAND
+   ========================================================= */
+
+body:not(.dark-mode) .navbar .brand {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+body:not(.dark-mode) .navbar .brand-icon {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+   ========================================================= */
+
+body:not(.dark-mode) .navbar .navbar-search {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  color: #cbd5e1 !important;
+}
+
+body:not(.dark-mode) .navbar .navbar-search input {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+body:not(.dark-mode) .navbar .navbar-search input::placeholder {
+  color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   THEME + NOTIFICATION BUTTONS
+   ========================================================= */
+
+body:not(.dark-mode) .navbar .theme-button,
+body:not(.dark-mode) .navbar .icon-button {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  color: #ffffff !important;
+}
+
+body:not(.dark-mode) .navbar .theme-button:hover,
+body:not(.dark-mode) .navbar .icon-button:hover {
+  background: #334155 !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+body:not(.dark-mode) .navbar .profile,
+body:not(.dark-mode) .navbar .profile-button {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+body:not(.dark-mode) .navbar .profile:hover,
+body:not(.dark-mode) .navbar .profile-button:hover {
+  background: #1e293b !important;
+}
+
+
+/* Profile name */
+
+body:not(.dark-mode) .navbar .profile-info strong {
+  color: #ffffff !important;
+}
+
+
+/* Profile role */
+
+body:not(.dark-mode) .navbar .profile-info span {
+  color: #94a3b8 !important;
+}
+
+
+/* Profile arrow */
+
+body:not(.dark-mode) .navbar .profile-arrow,
+body:not(.dark-mode) .navbar .profile-chevron {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+   ========================================================= */
+
+body:not(.dark-mode) .navbar .profile-avatar {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+/* =========================================================
+   WORKSPHERE - PERMANENT DARK NAVY HEADER
+   HEADER + SIDEBAR
+   WORKS IN BOTH LIGHT AND DARK MODE
+   ========================================================= */
+
+:root {
+  --worksphere-navy: #111827;
+  --worksphere-navy-hover: #1e293b;
+  --worksphere-blue: #2563eb;
+}
+
+
+/* =========================================================
+   HEADER - ALWAYS DARK NAVY
+   ========================================================= */
+
+.navbar,
+header,
+.top-navbar,
+.topbar {
+  background: #111827 !important;
+  background-color: #111827 !important;
+  border-bottom: 1px solid #1e293b !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   HEADER TEXT
+   ========================================================= */
+
+.navbar *,
+header *,
+.top-navbar *,
+.topbar * {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   MENU BUTTON
+   ========================================================= */
+
+.navbar .menu-button {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.navbar .menu-button:hover {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   WORKSPHERE BRAND
+   ========================================================= */
+
+.navbar .brand {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+.navbar .brand-icon {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+   ========================================================= */
+
+.navbar .navbar-search {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  color: #ffffff !important;
+}
+
+.navbar .navbar-search input {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+.navbar .navbar-search input::placeholder {
+  color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   THEME / NOTIFICATION BUTTONS
+   ========================================================= */
+
+.navbar .theme-button,
+.navbar .icon-button {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  color: #ffffff !important;
+}
+
+.navbar .theme-button:hover,
+.navbar .icon-button:hover {
+  background: #334155 !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.navbar .profile,
+.navbar .profile-button {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+.navbar .profile:hover,
+.navbar .profile-button:hover {
+  background: #1e293b !important;
+}
+
+.navbar .profile-info strong {
+  color: #ffffff !important;
+}
+
+.navbar .profile-info span {
+  color: #94a3b8 !important;
+}
+
+.navbar .profile-arrow,
+.navbar .profile-chevron {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+   ========================================================= */
+
+.navbar .profile-avatar {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SIDEBAR - ALWAYS DARK NAVY
+   ========================================================= */
+
+.sidebar {
+  background: #111827 !important;
+  background-color: #111827 !important;
+  color: #ffffff !important;
+}
+
+
+/* Sidebar text */
+
+.sidebar a,
+.sidebar button,
+.sidebar span {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SIDEBAR ACTIVE ITEM
+   ========================================================= */
+
+.sidebar a.active,
+.sidebar button.active,
+.sidebar .active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SIDEBAR HOVER
+   ========================================================= */
+
+.sidebar a:hover,
+.sidebar button:hover {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+
+
+/* Keep active item blue even when hovered */
+
+.sidebar a.active:hover,
+.sidebar button.active:hover,
+.sidebar .active:hover {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SIDEBAR SECTION TITLES
+   ========================================================= */
+
+.sidebar .section-title,
+.sidebar .menu-title {
+  color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   BODY / MAIN CONTENT
+   DO NOT MAKE MAIN CONTENT NAVY
+   ========================================================= */
+
+body:not(.dark-mode) {
+  background: #f8fafc;
+}
+
+body.dark-mode {
+  background: #0f172a;
+}
+/* =========================================================
+   WORKSPHERE DARK MODE - MAIN CONTENT FIX
+   Header + Sidebar stay dark navy
+   Cards and text remain clearly visible
+   ========================================================= */
+
+
+/* =========================================================
+   DARK MODE MAIN PAGE
+   ========================================================= */
+
+body.dark-mode {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+
+/* Main content area */
+
+body.dark-mode main,
+body.dark-mode .main-content,
+body.dark-mode .content,
+body.dark-mode .page-content {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+
+/* =========================================================
+   PAGE HEADINGS
+   ========================================================= */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+  color: #f8fafc !important;
+}
+
+
+/* Page descriptions */
+
+body.dark-mode p {
+  color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   PROJECT / TASK CARDS
+   ========================================================= */
+
+body.dark-mode .project-card,
+body.dark-mode .task-card,
+body.dark-mode .card {
+  background: #111827 !important;
+  border: 1px solid #334155 !important;
+  color: #f8fafc !important;
+}
+
+
+/* =========================================================
+   CARD TITLES
+   ========================================================= */
+
+body.dark-mode .project-card h3,
+body.dark-mode .project-card h4,
+body.dark-mode .task-card h3,
+body.dark-mode .task-card h4,
+body.dark-mode .card h3,
+body.dark-mode .card h4 {
+  color: #f8fafc !important;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+   ========================================================= */
+
+body.dark-mode .project-card p,
+body.dark-mode .task-card p,
+body.dark-mode .card p {
+  color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   PROJECT DETAILS
+   ========================================================= */
+
+body.dark-mode .project-card span,
+body.dark-mode .task-card span,
+body.dark-mode .card span {
+  color: #94a3b8;
+}
+
+
+/* Labels such as OWNER / DUE DATE / MEMBERS */
+
+body.dark-mode .project-card .label,
+body.dark-mode .task-card .label,
+body.dark-mode .card .label {
+  color: #94a3b8 !important;
+}
+
+
+/* Actual values */
+
+body.dark-mode .project-card strong,
+body.dark-mode .task-card strong,
+body.dark-mode .card strong {
+  color: #f8fafc !important;
+}
+
+
+/* =========================================================
+   STATISTICS CARDS
+   ========================================================= */
+
+body.dark-mode .stat-card,
+body.dark-mode .stats-card,
+body.dark-mode .summary-card {
+  background: #111827 !important;
+  border: 1px solid #334155 !important;
+  color: #f8fafc !important;
+}
+
+
+/* Statistic title */
+
+body.dark-mode .stat-card p,
+body.dark-mode .stats-card p,
+body.dark-mode .summary-card p {
+  color: #94a3b8 !important;
+}
+
+
+/* Statistic number */
+
+body.dark-mode .stat-card h2,
+body.dark-mode .stat-card h3,
+body.dark-mode .stats-card h2,
+body.dark-mode .stats-card h3,
+body.dark-mode .summary-card h2,
+body.dark-mode .summary-card h3 {
+  color: #f8fafc !important;
+}
+
+
+/* =========================================================
+   SEARCH INPUTS
+   ========================================================= */
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background: #111827 !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+}
+
+
+/* Placeholder */
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #64748b !important;
+}
+
+
+/* =========================================================
+   SEARCH / FILTER AREA
+   ========================================================= */
+
+body.dark-mode .search-container,
+body.dark-mode .filters,
+body.dark-mode .filter-container {
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   PROJECT TABLE
+   ========================================================= */
+
+body.dark-mode table {
+  background: #111827 !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+body.dark-mode th {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+body.dark-mode td {
+  background: #111827 !important;
+  color: #cbd5e1 !important;
+  border-color: #334155 !important;
+}
+
+
+/* Table hover */
+
+body.dark-mode tr:hover td {
+  background: #1e293b !important;
+}
+
+
+/* =========================================================
+   PROJECT BUTTONS
+   ========================================================= */
+
+body.dark-mode .edit-button,
+body.dark-mode button.edit,
+body.dark-mode .btn-edit {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border: 1px solid #2563eb !important;
+}
+
+body.dark-mode .edit-button:hover,
+body.dark-mode button.edit:hover,
+body.dark-mode .btn-edit:hover {
+  background: #1d4ed8 !important;
+  color: #ffffff !important;
+}
+
+
+/* Delete */
+
+body.dark-mode .delete-button,
+body.dark-mode button.delete,
+body.dark-mode .btn-delete {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  border: 1px solid #dc2626 !important;
+}
+
+body.dark-mode .delete-button:hover,
+body.dark-mode button.delete:hover,
+body.dark-mode .btn-delete:hover {
+  background: #b91c1c !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+
+body.dark-mode .progress-bar {
+  background: #334155 !important;
+}
+
+body.dark-mode .progress-fill {
+  background: #3b82f6 !important;
+}
+
+
+/* =========================================================
+   KEEP STATUS BADGES VISIBLE
+   ========================================================= */
+
+body.dark-mode .status {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+body.dark-mode a {
+  color: #60a5fa;
+}
+
+body.dark-mode a:hover {
+  color: #93c5fd;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   HEADER + SIDEBAR REMAIN DARK NAVY
+   ========================================================= */
+
+body.dark-mode .navbar,
+body.dark-mode header,
+body.dark-mode .top-navbar,
+body.dark-mode .topbar {
+  background: #111827 !important;
+  background-color: #111827 !important;
+  color: #ffffff !important;
+}
+
+
+/* Sidebar */
+
+body.dark-mode .sidebar {
+  background: #111827 !important;
+  background-color: #111827 !important;
+  color: #ffffff !important;
+}
+
+/* The persistent desktop sidebar needs no menu toggle; use the drawer on phones only. */
+.navbar .menu-button {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .navbar .menu-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Global search results */
+.navbar-search-container {
+  position: relative;
+  flex: 0 1 420px;
+  min-width: 220px;
+}
+
+.navbar .navbar-search {
+  width: 100%;
+}
+
+.navbar-search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 500;
+  max-height: min(65vh, 460px);
+  overflow-y: auto;
+  padding: 6px;
+  border: 1px solid #dbe3ee;
+  border-radius: 10px;
+  background: #fff;
+  color: #172033;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, .2);
+}
+
+.navbar-search-result {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #172033;
+  text-align: left;
+  cursor: pointer;
+}
+
+.navbar-search-result:hover,
+.navbar-search-result:focus-visible { background: #eff6ff; outline: none; }
+.navbar-search-result-type { color: #2563eb; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.navbar-search-result strong { font-size: 13px; }
+.navbar-search-result small { max-width: 100%; overflow: hidden; color: #64748b; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.navbar-search-empty { padding: 14px 12px; color: #64748b; font-size: 13px; }
+
+body.dark-mode .navbar-search-results { background: #111827; border-color: #334155; color: #f8fafc; }
+body.dark-mode .navbar-search-result { color: #f8fafc; }
+body.dark-mode .navbar-search-result:hover,
+body.dark-mode .navbar-search-result:focus-visible { background: #1e293b; }
+body.dark-mode .navbar-search-result small,
+body.dark-mode .navbar-search-empty { color: #94a3b8; }
+
+/* Keep the nav usable on short displays without tying its scroll to page content. */
+.sidebar {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+@media (min-width: 601px) {
+  .sidebar {
+    position: sticky;
+    top: 64px;
+    height: calc(100vh - 64px);
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .navbar-search-container { flex-basis: 300px; }
+}
+
+/* WorkSphere public landing page */
+.home-page {
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.home-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(24px, 7.8vw, 120px);
+  box-sizing: border-box;
+  border-bottom: 1px solid #1f2937;
+  background: rgba(29, 78, 216, .97);
+  backdrop-filter: blur(14px);
+}
+
+.home-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.home-brand-mark {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #1d4ed8;
+  font-weight: 800;
+}
+
+.home-nav-links { display: flex; align-items: center; gap: 32px; margin: 0 auto; }
+.home-nav-links a,
+.home-login-link { color: #eff6ff; font-size: 13px; font-weight: 600; text-decoration: none; }
+.home-nav-links a:hover { color: #bfdbfe; }
+.home-login-link { padding: 10px 16px; border: 1px solid rgba(255,255,255,.55); border-radius: 8px; background: #ffffff; color: #1d4ed8; }
+.home-login-link:hover { color: #1e40af; background: #eff6ff; }
+
+.home-page .hero-section {
+  position: relative;
+  min-height: 760px;
+  height: 100vh;
+  padding-top: 130px;
+  padding-bottom: 60px;
+  background-image:
+    linear-gradient(110deg, rgba(12,24,45,.60) 0%, rgba(16,42,78,.48) 48%, rgba(20,46,78,.34) 100%),
+    url("./assets/login-bg.png");
+  background-position: center, center 50%;
+  background-size: cover;
+}
+
+.home-page .hero-content { position: relative; z-index: 1; }
+.home-page .hero-badge { display: inline-flex; align-items: center; gap: 7px; border: 1px solid rgba(191,219,254,.5); background: rgba(30,91,190,.56); color: #eff6ff; text-transform: uppercase; letter-spacing: .04em; }
+.home-page .hero-content h1 { color: #f8fbff; }
+.home-page .hero-content h1 span { color: #7db3ff; }
+.home-page .hero-content h1 { font-size: clamp(42px, 4.5vw, 64px); letter-spacing: -2.5px; }
+.home-page .hero-content p { max-width: 520px; color: #e2edff; }
+.home-page .hero-preview { position: relative; z-index: 1; }
+.home-page .dashboard-card { max-width: 590px; border-color: rgba(226,232,240,.8); box-shadow: 0 24px 70px rgba(15,23,42,.16); }
+.home-cta { display: inline-flex; align-items: center; justify-content: center; gap: 9px; text-decoration: none; }
+.hero-proof { display: flex; align-items: center; gap: 8px; margin-top: 22px; color: #e2edff; font-size: 13px; }
+.hero-proof svg { color: #16a34a; }
+.preview-activity { display: flex; align-items: center; gap: 10px; margin-top: 22px; padding-top: 17px; border-top: 1px solid #e8edf4; text-align: left; }
+.preview-activity-icon { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 9px; background: #ecfdf5; color: #059669; }
+.preview-activity > span:nth-child(2) { display: flex; flex: 1; flex-direction: column; gap: 3px; }
+.preview-activity strong { color: #1e293b; font-size: 12px; }
+.preview-activity small { color: #94a3b8; font-size: 11px; }
+.preview-avatar { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #dbeafe; color: #1d4ed8; font-size: 10px; font-weight: 700; }
+.preview-metric-bars { display: flex; align-items: flex-end; gap: 7px; height: 42px; padding: 5px 0 1px; border-bottom: 1px solid #dbe3ef; }
+.preview-metric-bars i { display: block; flex: 1; height: 65%; border-radius: 5px 5px 0 0; background: linear-gradient(180deg, #60a5fa, #2563eb); }
+.preview-metric-bars i:nth-child(2) { height: 88%; }
+.preview-metric-bars i:nth-child(3) { height: 72%; }
+.preview-metric-bars i:nth-child(4) { height: 96%; }
+.preview-metric-bars i:nth-child(5) { height: 80%; }
+
+.landing-intro,
+.landing-features,
+.landing-contact { padding: 100px clamp(24px, 9vw, 140px); }
+.landing-intro { background: #fff; text-align: center; }
+.section-kicker { color: #2563eb; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+.landing-intro h2,
+.landing-section-heading h2,
+.landing-contact h2 { max-width: 760px; margin: 16px auto; color: #111827; font-size: clamp(30px, 4vw, 46px); line-height: 1.14; letter-spacing: -1.4px; }
+.landing-intro > p { max-width: 760px; margin: 0 auto; color: #64748b; font-size: 16px; line-height: 1.85; }
+.landing-features { background: #f3f6fb; }
+.landing-section-heading { margin-bottom: 34px; text-align: center; }
+.landing-section-heading h2 { margin-bottom: 0; }
+.landing-section-heading > p { max-width: 700px; margin: 14px auto 0; color: #64748b; font-size: 15px; line-height: 1.75; }
+.feature-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; max-width: 1200px; margin: 0 auto; }
+.feature-card { min-height: 200px; padding: 25px; border: 1px solid #e1e8f1; border-radius: 14px; background: #fff; box-shadow: 0 8px 24px rgba(15,23,42,.035); }
+.feature-icon { width: 43px; height: 43px; display: grid; place-items: center; margin-bottom: 19px; border-radius: 12px; background: #eff6ff; color: #2563eb; }
+.feature-card h3 { margin: 0 0 9px; color: #182235; font-size: 16px; }
+.feature-card p { margin: 0; color: #64748b; font-size: 13px; line-height: 1.7; }
+.landing-workflow { padding: 92px clamp(24px, 9vw, 140px); background: #fff; }
+.workflow-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+.workflow-card { position: relative; min-height: 225px; padding: 26px; border: 1px solid #dbe5f2; border-radius: 16px; background: linear-gradient(145deg, #fff 0%, #f5f8ff 100%); box-shadow: 0 10px 28px rgba(15,23,42,.04); }
+.workflow-number { position: absolute; top: 22px; right: 23px; color: #bfdbfe; font-size: 24px; font-weight: 800; letter-spacing: -.04em; }
+.workflow-card h3 { margin: 0 0 9px; color: #172033; font-size: 17px; }
+.workflow-card p { margin: 0; color: #64748b; font-size: 13px; line-height: 1.75; }
+.metric-note { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; max-width: 1168px; margin: 22px auto 0; padding: 17px 20px; border: 1px solid #bfdbfe; border-radius: 12px; background: #eff6ff; color: #475569; font-size: 13px; line-height: 1.6; }
+.metric-note strong { color: #1d4ed8; }
+.landing-tools { padding: 92px clamp(24px, 9vw, 140px); background: #eef4fc; }
+.tools-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 1000px; margin: 0 auto; }
+.tool-card { display: flex; align-items: flex-start; gap: 16px; min-height: 135px; padding: 23px; border: 1px solid #dbe5f2; border-radius: 14px; background: #fff; box-shadow: 0 8px 22px rgba(15,23,42,.035); }
+.tool-icon { flex: 0 0 42px; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: #eff6ff; color: #2563eb; }
+.tool-card h3 { margin: 2px 0 7px; color: #182235; font-size: 15px; }
+.tool-card p { margin: 0; color: #64748b; font-size: 13px; line-height: 1.7; }
+.landing-contact { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 50px; background: #111827; }
+.landing-contact h2 { margin: 14px 0; color: #fff; }
+.landing-contact > div:first-child > p { max-width: 510px; color: #aab6c8; font-size: 15px; line-height: 1.8; }
+.landing-contact .section-kicker { color: #93c5fd; }
+.contact-card { padding: 30px; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; background: rgba(255,255,255,.07); }
+.contact-card > strong { color: #fff; font-size: 18px; }
+.contact-card > p { margin: 8px 0 22px; color: #aab6c8; font-size: 13px; }
+.contact-details-list { display: grid; gap: 13px; margin: 0 0 24px; }
+.contact-details-list a { display: flex; align-items: flex-start; gap: 11px; color: #e2e8f0; font-size: 13px; line-height: 1.55; text-decoration: none; overflow-wrap: anywhere; }
+.contact-details-list a svg { flex: 0 0 17px; margin-top: 1px; color: #93c5fd; }
+.contact-social-badge { flex: 0 0 17px; width: 17px; height: 17px; display: inline-grid; place-items: center; border: 1px solid #93c5fd; border-radius: 4px; color: #bfdbfe; font-size: 8px; font-weight: 800; line-height: 1; }
+.contact-details-list a:hover { color: #93c5fd; }
+.contact-card .primary-button { width: 100%; box-sizing: border-box; }
+.home-footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 24px clamp(24px, 7.8vw, 120px); background: #0b1220; }
+.home-footer .home-brand { color: #f8fafc; }
+.home-footer > span,
+.home-footer > a:last-child { color: #94a3b8; font-size: 12px; text-decoration: none; }
+
+@media (max-width: 900px) {
+  .home-page .hero-section { height: auto; min-height: 0; padding-top: 145px; }
+  .home-page .hero-preview { justify-content: center; }
+  .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .workflow-grid { grid-template-columns: 1fr; }
+  .landing-contact { grid-template-columns: 1fr; gap: 25px; }
+}
+
+@media (max-width: 600px) {
+  .home-nav { height: 68px; padding: 0 18px; }
+  .home-nav-links { gap: 14px; margin-right: 14px; }
+  .home-nav-links a:first-child { display: none; }
+  .home-nav-links a { font-size: 11px; }
+  .home-login-link { padding: 8px 10px; font-size: 11px; }
+  .home-brand { gap: 7px; font-size: 14px; }
+  .home-brand-mark { width: 31px; height: 31px; }
+  .home-page .hero-section { padding: 112px 20px 48px; gap: 34px; }
+  .home-page .hero-content h1 { font-size: 39px; letter-spacing: -1.6px; }
+  .home-page .hero-actions { flex-direction: row; }
+  .home-page .hero-actions .home-cta { width: auto; flex: 1; padding: 0 11px; font-size: 12px; }
+  .home-page .dashboard-card { padding: 19px; }
+  .home-page .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .home-page .stat-card { padding: 12px; }
+  .home-page .stat-card strong { font-size: 23px; }
+  .landing-intro, .landing-features, .landing-contact { padding: 68px 20px; }
+  .landing-workflow, .landing-tools { padding: 68px 20px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .feature-card { min-height: 0; }
+  .home-footer { flex-wrap: wrap; padding: 22px 20px; }
+}
+
+body.dark-mode .home-page { background: #0f172a; color: #f8fafc; }
+body.dark-mode .home-nav { background: rgba(29,78,216,.97); border-color: rgba(191,219,254,.25); }
+body.dark-mode .home-brand,
+body.dark-mode .home-nav-links a { color: #fff; }
+body.dark-mode .home-brand-mark { background: #fff; color: #1d4ed8; }
+body.dark-mode .home-login-link { background: #fff; border-color: rgba(255,255,255,.55); color: #1d4ed8; }
+body.dark-mode .home-page .hero-section { background-image: linear-gradient(110deg, rgba(12,24,45,.66) 0%, rgba(16,42,78,.54) 48%, rgba(20,46,78,.42) 100%), url("./assets/login-bg.png"); }
+body.dark-mode .home-page .hero-content h1,
+body.dark-mode .landing-intro h2,
+body.dark-mode .landing-section-heading h2 { color: #f8fafc; }
+body.dark-mode .home-page .hero-content p,
+body.dark-mode .hero-proof { color: #cbd5e1; }
+body.dark-mode .landing-intro,
+body.dark-mode .landing-features,
+body.dark-mode .landing-workflow { background: #0f172a; }
+body.dark-mode .landing-tools { background: #111827; }
+body.dark-mode .landing-intro > p { color: #94a3b8; }
+body.dark-mode .feature-card { background: #111827; border-color: #263449; }
+body.dark-mode .feature-card h3 { color: #f1f5f9; }
+body.dark-mode .feature-card p { color: #94a3b8; }
+body.dark-mode .workflow-card,
+body.dark-mode .tool-card { background: #111827; border-color: #263449; }
+body.dark-mode .workflow-card h3,
+body.dark-mode .tool-card h3 { color: #f1f5f9; }
+body.dark-mode .workflow-card p,
+body.dark-mode .tool-card p,
+body.dark-mode .landing-section-heading > p { color: #94a3b8; }
+body.dark-mode .metric-note { background: #172554; border-color: #1d4ed8; color: #cbd5e1; }
+body.dark-mode .metric-note strong { color: #93c5fd; }
+
+
+/* Active sidebar */
+
+body.dark-mode .sidebar a.active,
+body.dark-mode .sidebar button.active,
+body.dark-mode .sidebar .active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+/* =========================================================
+   WORKSPHERE - FINAL DARK MODE
+   Projects page readability fix
+   ========================================================= */
+
+
+/* =========================================================
+   DARK MODE MAIN AREA
+   ========================================================= */
+
+body.dark-mode .app-layout,
+body.dark-mode .app-main,
+body.dark-mode .projects-page {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+
+/* =========================================================
+   PROJECT PAGE TEXT
+   ========================================================= */
+
+body.dark-mode .projects-page h1,
+body.dark-mode .projects-page h2,
+body.dark-mode .projects-page h3,
+body.dark-mode .projects-page h4 {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .projects-page p {
+  color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+   ========================================================= */
+
+body.dark-mode .project-summary-card,
+body.dark-mode .summary-card,
+body.dark-mode .project-stat-card {
+  background: #111827 !important;
+  border: 1px solid #334155 !important;
+  color: #f8fafc !important;
+}
+
+
+/* Summary card ALL text */
+
+body.dark-mode .project-summary-card *,
+body.dark-mode .summary-card *,
+body.dark-mode .project-stat-card * {
+  color: inherit;
+}
+
+
+/* Summary labels */
+
+body.dark-mode .project-summary-card span,
+body.dark-mode .summary-card span,
+body.dark-mode .project-stat-card span {
+  color: #94a3b8 !important;
+}
+
+
+/* Summary numbers */
+
+body.dark-mode .project-summary-card strong,
+body.dark-mode .summary-card strong,
+body.dark-mode .project-stat-card strong {
+  color: #f8fafc !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+body.dark-mode .project-card {
+  background: #111827 !important;
+  border: 1px solid #334155 !important;
+  color: #f8fafc !important;
+}
+
+
+/* Project card title */
+
+body.dark-mode .project-card h3,
+body.dark-mode .project-card h4 {
+  color: #f8fafc !important;
+}
+
+
+/* Project description */
+
+body.dark-mode .project-card p {
+  color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   PROJECT INFORMATION
+   OWNER / DATE / MEMBERS
+   ========================================================= */
+
+body.dark-mode .project-card .label,
+body.dark-mode .project-card .project-label,
+body.dark-mode .project-card small {
+  color: #94a3b8 !important;
+}
+
+
+/* Actual values */
+
+body.dark-mode .project-card strong {
+  color: #f8fafc !important;
+}
+
+
+/* Generic text inside project metadata */
+
+body.dark-mode .project-card .project-info,
+body.dark-mode .project-card .project-meta {
+  color: #cbd5e1 !important;
+}
+
+
+/* =========================================================
+   PROJECT CARD DIVIDERS
+   ========================================================= */
+
+body.dark-mode .project-card hr,
+body.dark-mode .project-card .divider,
+body.dark-mode .project-card .project-divider {
+  border-color: #334155 !important;
+  background: #334155 !important;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+body.dark-mode .project-card .progress-label,
+body.dark-mode .project-card .progress-text {
+  color: #94a3b8 !important;
+}
+
+
+/* Percentage */
+
+body.dark-mode .project-card .progress-percentage {
+  color: #60a5fa !important;
+}
+
+
+/* Progress background */
+
+body.dark-mode .project-card .progress-bar {
+  background: #334155 !important;
+}
+
+
+/* Progress fill */
+
+body.dark-mode .project-card .progress-fill,
+body.dark-mode .project-card .progress-value {
+  background: #3b82f6 !important;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+   ========================================================= */
+
+body.dark-mode .projects-page input {
+  background: #111827 !important;
+  border: 1px solid #334155 !important;
+  color: #f8fafc !important;
+}
+
+body.dark-mode .projects-page input::placeholder {
+  color: #64748b !important;
+}
+
+
+/* =========================================================
+   FILTER DROPDOWN
+   ========================================================= */
+
+body.dark-mode .projects-page select,
+body.dark-mode .projects-page .filter,
+body.dark-mode .projects-page .projects-filter {
+  background: #111827 !important;
+  border: 1px solid #334155 !important;
+  color: #f8fafc !important;
+}
+
+
+/* =========================================================
+   NEW PROJECT BUTTON
+   ========================================================= */
+
+body.dark-mode .projects-page button {
+  color: #ffffff;
+}
+
+
+/* New project */
+
+body.dark-mode .projects-page .new-project-button,
+body.dark-mode .projects-page .add-project-button {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+   ========================================================= */
+
+body.dark-mode .project-card .edit-button,
+body.dark-mode .project-card button:first-of-type {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+   ========================================================= */
+
+body.dark-mode .project-card .delete-button,
+body.dark-mode .project-card button:last-of-type {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   Keep their original colors
+   ========================================================= */
+
+body.dark-mode .project-card .status,
+body.dark-mode .project-card .status-badge {
+  color: inherit !important;
+}
+
+
+/* Active */
+
+body.dark-mode .project-card .status.active {
+  background: #dcfce7 !important;
+  color: #047857 !important;
+}
+
+
+/* Completed */
+
+body.dark-mode .project-card .status.completed {
+  background: #dbeafe !important;
+  color: #2563eb !important;
+}
+
+
+/* In Review */
+
+body.dark-mode .project-card .status.review {
+  background: #ffedd5 !important;
+  color: #c2410c !important;
+}
+
+
+/* =========================================================
+   HEADER
+   ALWAYS DARK NAVY
+   ========================================================= */
+
+body.dark-mode .navbar,
+body.dark-mode header,
+body.dark-mode .top-navbar,
+body.dark-mode .topbar {
+  background: #111827 !important;
+  background-color: #111827 !important;
+  border-bottom: 1px solid #1e293b !important;
+  color: #ffffff !important;
+}
+
+
+/* Header text */
+
+body.dark-mode .navbar .brand,
+body.dark-mode .navbar .menu-button,
+body.dark-mode .navbar .profile-info strong,
+body.dark-mode .navbar .profile-arrow,
+body.dark-mode .navbar .profile-chevron {
+  color: #ffffff !important;
+}
+
+
+/* Header secondary text */
+
+body.dark-mode .navbar .profile-info span {
+  color: #94a3b8 !important;
+}
+
+
+/* Header search */
+
+body.dark-mode .navbar .navbar-search {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+}
+
+body.dark-mode .navbar .navbar-search input {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+
+/* Header buttons */
+
+body.dark-mode .navbar .theme-button,
+body.dark-mode .navbar .icon-button {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  color: #ffffff !important;
+}
+
+
+/* Avatar */
+
+body.dark-mode .navbar .profile-avatar {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+body.dark-mode .sidebar {
+  background: #111827 !important;
+  border-right: 1px solid #1e293b !important;
+}
+
+
+/* Sidebar links */
+
+body.dark-mode .sidebar .sidebar-link {
+  color: #e2e8f0 !important;
+}
+
+
+/* Hover */
+
+body.dark-mode .sidebar .sidebar-link:hover {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+
+
+/* Active */
+
+body.dark-mode .sidebar .sidebar-link.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   DARK MODE BODY
+   ========================================================= */
+
+body.dark-mode {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+}
+/* =========================================================
+   DASHBOARD - VIEW ALL BUTTON
+========================================================= */
+
+.dashboard-page .view-all-button,
+.dashboard-page .view-all,
+.dashboard-page button.view-all-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 36px;
+  padding: 0 14px;
+
+  border: 1px solid #2563eb !important;
+  border-radius: 8px !important;
+
+  background: #2563eb !important;
+  color: #ffffff !important;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Hover */
+
+.dashboard-page .view-all-button:hover,
+.dashboard-page .view-all:hover,
+.dashboard-page button.view-all-button:hover {
+  background: #1d4ed8 !important;
+  border-color: #1d4ed8 !important;
+
+  color: #ffffff !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 14px rgba(37, 99, 235, 0.28);
+}
+
+
+/* Click */
+
+.dashboard-page .view-all-button:active,
+.dashboard-page .view-all:active,
+.dashboard-page button.view-all-button:active {
+  transform: translateY(0);
+
+  box-shadow: none;
+}
+
+
+/* Icon / arrow */
+
+.dashboard-page .view-all-button svg,
+.dashboard-page .view-all svg {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .dashboard-page .view-all-button,
+body.dark-mode .dashboard-page .view-all,
+body.dark-mode .dashboard-page button.view-all-button {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .dashboard-page .view-all-button:hover,
+body.dark-mode .dashboard-page .view-all:hover,
+body.dark-mode .dashboard-page button.view-all-button:hover {
+  background: #1d4ed8 !important;
+  border-color: #1d4ed8 !important;
+  color: #ffffff !important;
+}
