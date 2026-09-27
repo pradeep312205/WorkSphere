@@ -70,7 +70,7 @@ The repository includes `vercel.json` for client-side route refreshes and `rende
 
 Deploy the Render service from the Blueprint in `render.yaml`. It builds from `backend/`, runs `npm ci` and `npm start`, and checks `/health`. Set `CORS_ORIGINS` to the exact Vercel site origin (no trailing slash); include a comma-separated list only when additional origins are intentionally allowed. Render generates `JWT_SECRET` for the service.
 
-The backend requires a MySQL database reachable from Render. The local MySQL server at `localhost` cannot be used by the deployed service. Configure `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, and `DB_NAME` with your hosted MySQL values in the Render service environment. The app does not copy local accounts or records to the hosted database; export/import data only if you intend to publish it to that deployment.
+The backend requires a MySQL-compatible database reachable from Render. The local MySQL server at `localhost` cannot be used by the deployed service. The included Blueprint provisions only the free Render API service; it does not provision a paid database. For a free hosted database, create a TiDB Cloud Starter instance, then set `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, and `DB_NAME` from TiDB's Connect panel in the Render service environment and set `DB_SSL=true`. TiDB Cloud Starter currently provides a free monthly quota; if exceeded, it throttles connections rather than automatically charging when the spending limit remains zero. The app does not copy local accounts or records to the hosted database; export/import data only if you intend to publish it to that deployment.
 
 Uploaded documents and message attachments are written to disk. Render's default service filesystem is ephemeral; for durable uploads, attach a persistent disk to the API service, mount it at `/var/data`, and set `UPLOADS_DIR=/var/data`. Do not put database or OpenAI secrets in Vercel; `OPENAI_API_KEY` belongs only in Render's backend environment. `OPENAI_API_KEY` is optional because the assistant has a local analytics fallback.
 
@@ -79,7 +79,8 @@ Uploaded documents and message attachments are written to disk. Render's default
 | Variable | Purpose |
 | --- | --- |
 | `PORT` | Express port (default `5000`) |
-| `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` | MySQL connection |
+| `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` | MySQL-compatible database connection |
+| `DB_SSL` | Enable TLS for hosted database connections such as TiDB Cloud Starter |
 | `JWT_SECRET` | JWT signing and verification secret |
 | `OPENAI_API_KEY` | Optional backend-only AI provider key |
 | `OPENAI_MODEL` | Optional model name (default `gpt-4o-mini`) |
