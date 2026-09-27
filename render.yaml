@@ -1,8 +1,31 @@
 services:
+  # MySQL must use persistent storage; the API connects over Render's private network.
+  - type: pserv
+    name: worksphere-mysql
+    runtime: docker
+    plan: starter
+    region: singapore
+    repo: https://github.com/render-examples/mysql.git
+    branch: main
+    envVars:
+      - key: MYSQL_DATABASE
+        value: worksphere
+      - key: MYSQL_USER
+        value: worksphere
+      - key: MYSQL_PASSWORD
+        generateValue: true
+      - key: MYSQL_ROOT_PASSWORD
+        generateValue: true
+    disk:
+      name: worksphere-mysql-data
+      mountPath: /var/lib/mysql
+      sizeGB: 10
+
   - type: web
     name: worksphere-api
     runtime: node
     plan: free
+    region: singapore
     rootDir: backend
     buildCommand: npm ci
     startCommand: npm start
@@ -11,18 +34,24 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: DB_HOST
-        sync: false
+        fromService:
+          type: pserv
+          name: worksphere-mysql
+          property: host
       - key: DB_PORT
-        sync: false
+        value: "3306"
       - key: DB_USER
-        sync: false
+        value: worksphere
       - key: DB_PASSWORD
-        sync: false
+        fromService:
+          type: pserv
+          name: worksphere-mysql
+          envVarKey: MYSQL_PASSWORD
       - key: DB_NAME
-        sync: false
+        value: worksphere
       - key: CORS_ORIGINS
-        sync: false
+        value: https://worksphere-kohl.vercel.app
       - key: OPENAI_API_KEY
-        sync: false
+        value: ""
       - key: OPENAI_MODEL
         value: gpt-4o-mini
